@@ -8,10 +8,17 @@ const routes = [
         component: ContactBook,
     },
     {
+        path: "/contacts/:id",
+        name: "contact.edit",
+        component: () => import("@/views/ContactEdit.vue"),
+        props: true
+    },
+    {
         path: "/:pathMatch(.*)*",
         name: "notfound",
         component: () => import("@/views/NotFound.vue"),
-    }
+    },
+    
 ];
 
 const router = createRouter({
