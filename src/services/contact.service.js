@@ -7,7 +7,7 @@ class ContactService {
     async getAll() {
         return (await this.api.get("/")).data;
     }
-    async create() {
+    async create(data) {
         return (await this.api.post("/", data)).data;
     }
     async deleteAll() {
@@ -17,7 +17,7 @@ class ContactService {
         return (await this.api.get(`/${id}`)).data;
     }
     async update(id, data) {
-        return (await this.api.put(`/${id}`, data)).data;
+        return (await this.api.post(`/${id}`, data)).data;
     }
     async delete(id) {
         return (await this.api.delete(`/${id}`)).data;
